@@ -1,0 +1,48 @@
+fieldset{
+	border: none;
+}
+
+.header{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	height: 50px;
+}
+
+	.header-logo{
+		margin-left: 20px;
+	}
+
+	.header-menu-list{
+		display: flex;
+		list-style-type: none;
+		margin: 0px;
+		margin-right: 20px;
+	}
+
+		.header-menu-list-item{
+			margin-right: 15px;
+		}
+
+			.header-menu-list-item-link{
+				display: block;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #ff5a5f;
+				font-weight: bold;
+			}
+
+				.header-menu-list-item-link:hover{
+					color: #e00007;
+				}
+
+.search-section{
+	display: flex;
+	height: 400px;
+	background-image: url('../images/background-s_search.jpg');
+	background-size: cover;
+	align-items : center;
+	justify-content: center;
+}				

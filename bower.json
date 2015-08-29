@@ -1,0 +1,16 @@
+{
+  "name": "CoderHouse-airbnb",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fernandezn/CoderHouse-airbnb",
+  "authors": [
+    "Nicolas Fernandez <fernandez.nicolas.j@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}
