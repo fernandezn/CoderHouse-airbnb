@@ -1,0 +1,27 @@
+{
+  "name": "airbnb",
+  "version": "1.0.0",
+  "description": "Proyecto Final Curso FullStack CoderHouse",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandezn/CoderHouse-airbnb.git"
+  },
+  "author": "Nicolas Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandezn/CoderHouse-airbnb/issues"
+  },
+  "homepage": "https://github.com/fernandezn/CoderHouse-airbnb#readme",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "chalk": "^1.1.1",
+    "express": "^4.13.3",
+    "glob": "^5.0.14",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.7"
+  }
+}
