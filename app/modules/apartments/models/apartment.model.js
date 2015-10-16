@@ -9,13 +9,16 @@ var ApartmentSchema = new Schema({
 	description  : 'String',
 	address	 	 : {
 		fullAddress : 'String',
+		locality	: { type : 'String', uppercase : true},
+		city		: 'String',
 		cord: {
 			type : { type : 'String', default : 'Point' },
 			coordinates: [Number]
 		}
 	},	
 	pictures 	 : ['String'],
-	reservations : [Schema.Types.ObjectId]
+	reservations : [Schema.Types.ObjectId],
+	active		 : 'Boolean' 
 });
 
 mongoose.model('Apartment', ApartmentSchema);

@@ -28,7 +28,7 @@ exports.signUp = function(req,res){
 
 // Login del Usuario por Mail y Password
 exports.signIn = function(req,res){
-	var query = { email : req.query.mail, password : req.query.password };
+	var query = { email : req.query.mail, password : req.query.password, active : true };
 	User.findOne(query, function(error,user){
 		if (!user) return res.status(401).json({ mensaje : "Usuario o Password Incorrecto" });
 		var tokenPayload = { _id : user._id };
