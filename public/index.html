@@ -6,11 +6,88 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div ng-controller="loginController as ctrl">
-		<ul>
-			<li ng-repeat="test in ctrl.pruebas">{{ test }}</li>
-		</ul>
-	</div>
+
+	<nav>
+		<div class="nav-wrapper container">
+		  <a href="#/" class="brand-logo">airbnb</a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		    <li><a href="#">Registrarse</a></li>
+		    <li><a href="#">Iniciar Sesión</a></li>
+		  </ul>
+		</div>
+	</nav>
+
+    <div class="parallax-container bkg-alpha">
+   		<div class="section">
+   			<div class="container">
+   				<br>
+   				<br>
+   				<br>
+   				<h1 class="header center white-text">NUESTA CASA ES TU CASA</h1>
+   				<h5 class="center white-text">Alquila espacios únicos y alojate con anfitriones de más de 190 países.</h5>
+   			</div>
+   		</div>
+   		<div class="search-bar white-text">
+   			<div class="row">
+   				<div class="col s12 center">
+   					<div class="container">
+   						<form action="">
+   							<div class="col s12 l10 input-field">
+   								<label for="searchCity">¿Dónde Quieres Ir?</label>
+   								<input type="text" id="searchCity" name="searchCity">
+   							</div>  
+   							<div class="col s12 l2 input-field">
+								<button class="waves-effect waves-light btn red lighten-1">Buscar</button>
+   							</div>     							 							
+   						</form>
+   					</div>
+   				</div>
+   			</div>
+   		</div>
+    	<div class="parallax"><img src="background1.jpg"></div>    	
+    </div>
+
+ 	<div class="container">
+    	<div class="section">
+    		<div class="row">
+    			<div class="col s12 center">
+    				<h4>Para el fin de semana</h4>
+    				<h6>A veces los lugares más increíbles están cerca de casa.</h6>
+    			</div>
+    		</div>			
+    	</div>
+ 	</div>  
+  
+    <div class="parallax-container bkg-alpha">
+    	<div class="parallax"><img src="background2.jpg"></div>
+    </div>	    
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">airbnb</h5>
+            <p class="grey-text text-lighten-4">Proyecto Final para curso FullStack en CoderHouse</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+          	<h5 class="white-text">¿Qué Desea Hacer?</h5>
+            <ul>			
+            	<li><a class="grey-text text-lighten-3" href="#!">Registrarse</a></li>
+            	<li><a class="grey-text text-lighten-3" href="#!">Iniciar Sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Proyect Open Source
+        <a class="grey-text text-lighten-4 right" href="https://github.com/fernandezn/CoderHouse-airbnb">Ver en GitHub</a>
+        </div>
+      </div>
+    </footer>    
+
+	<script src="scripts/libs/jquery/dist/jquery.js"></script>
+	<script src="scripts/libs/materialize/dist/js/materialize.js"></script>
 	<script src="bundle.js"></script>
 </body>
 </html>

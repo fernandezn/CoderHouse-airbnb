@@ -36,6 +36,7 @@
     "babelify": "^6.3.0",
     "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
+    "browserify-shim": "^3.8.10",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.0.4",
