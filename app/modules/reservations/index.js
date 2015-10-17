@@ -3,20 +3,20 @@
 var express = require('express');
 var router  = express.Router();
 
-// // Controllers
-// var UserCtrl = require('./controllers/user.controller.js');
-// var RegCtrl  = require('./controllers/register.controller.js');
+// Controllers
+var UserCtrl   = require('../users/controllers/user.controller.js');
+var ReservCtrl = require('./controllers/reservation.controller.js');
 
-// Defino las rutas y controllers del modulo users
+// Defino las rutas y controllers del modulo reservations
 module.exports = function(app){
 
-	// // Rutas para la administracion del Usuario	
-	// router.get("/users/:id", UserCtrl.getUser);       // Obtiene los datos de un usuario
-	// router.put("/users/:id", UserCtrl.updateUser); 	  // Actualiza los datos de un usuario
-	// router.delete("/users/:id", UserCtrl.deleteUser); // Inactiva un usuario
+	// Rutas para la administracion de las Reservas	
+	router.route("/reservations/:id").all(UserCtrl.checkUser)
+		.put(ReservCtrl.updateReservation)     // Actualizacion de una Reserva
+		.delete(ReservCtrl.cancelReservation); // Cancelacion de una Reserva
 
-	// // Rutas para el Registro/Login del Usuario
-	// router.post("/users", UserCtrl.signUp); // Registro de Usuario
+	// Ruta para la Reserva de un Departamento
+	router.post("/reservations", UserCtrl.checkUser, ReservCtrl.createReservation);
 
-	// app.use('/api',router); // Asigno el prefijo /api a las rutas del usuario
+	app.use('/api',router); // Asigno el prefijo /api a las rutas del usuario
 };

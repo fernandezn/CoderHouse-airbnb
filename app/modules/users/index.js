@@ -18,11 +18,17 @@ module.exports = function(app){
 		.put(UserCtrl.updateUser)	  // Actualizacion del Usuario
 		.delete(UserCtrl.updateUser); // Desactivacion del Usuario
 
-	// Rutas para el Registro del Usuario
+	// Ruta para el Registro del Usuario
 	router.post("/users", UserCtrl.signUp); // Registro de Usuario	
 
-	// Rutas para el Login del Usuario con Mail y Password
-	router.post("/auth/users/token", UserCtrl.signIn);
+	// Ruta para el Login del Usuario con Mail y Password
+	router.post("/users/auth/token", UserCtrl.signIn);
+
+	// Ruta para obtener las reservas de un usuario
+	router.get("/users/:id/reservations", UserCtrl.checkUser, UserCtrl.getReservationsUser);
+
+	// Ruta para obtener los departamentos de un usuario
+	router.get("/users/:id/apartments", UserCtrl.checkUser, UserCtrl.gerAparmentsUser);
 
 	// // Rutas para el Login del Usuario con Facebook
 	// router.get("/users/auth/facebook", passport.authenticate('facebook'));

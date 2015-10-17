@@ -3,6 +3,8 @@
 var jwt		 = require('jwt-simple');
 var mongoose = require('mongoose');
 var User	 = mongoose.model('User');
+var Reserv   = mongoose.model('Reservation');
+var Apart    = mongoose.model('Apartment');
 var secret   = '1A2b3C4d5E6f7G8h9I';
 
 // Validacion del usuario
@@ -75,6 +77,41 @@ exports.deleteUser = function(req,res){
 			res.status(200).json({ mensaje : "Usuario Borrado Corrrectamente" });
 		});		
 		
-	});	
+	});
 };
+
+// Reservas de un Usuario
+exports.getReservationsUser = function(req,res){
+	var userId = (req.params.id == 'me') ? req.userToken._id : req.params.id;
+	User.findOne({ _id : userId }, function(error,user){
+		if (error) return res.status(400).json({ mensaje : "Error al obtener datos del Usuario" });
+		Reserv.populate(user, { 
+			path : 'reservations', 
+			select : 'apartmentId startDate endDate',
+			match : { active : true }
+		}, function(error,user){
+			Apart.populate(user, { 
+				path : 'reservations.apartmentId',
+				select : 'title',
+				match : { active : true }
+			}, function(error,user){
+				res.status(200).json(user.reservations);
+			});
+		});
+	});
+}
+
+exports.gerAparmentsUser = function(req,res){
+	var userId = (req.params.id == 'me') ? req.userToken._id : req.params.id;
+	User.findOne({ _id : userId }, function(error,user){
+		if (error) return res.status(400).json({ mensaje : "Error al obtener datos del Usuario" });
+		Apart.populate(user, { 
+			path : 'apartments', 
+			select : '-owner -reservations',
+			match : { active : true }
+		}, function(error,user){
+			res.status(200).json(user.apartments);
+		});
+	});	
+}
 

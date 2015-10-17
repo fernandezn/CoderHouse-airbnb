@@ -20,11 +20,16 @@ module.exports.initModules = function(app){
 	});
 }
 
+module.exports.initStaticFiles = function(app){
+	app.use(express.static(path.resolve('./public')));
+}
+
 module.exports.init = function(){
 
 	var app = express();
 	this.initMiddleware(app);
 	this.initModules(app);
+	this.initStaticFiles(app);
 
 	return app;
 

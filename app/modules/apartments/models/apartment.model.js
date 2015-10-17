@@ -16,7 +16,10 @@ var ApartmentSchema = new Schema({
 			coordinates: [Number]
 		}
 	},	
-	pictures 	 : ['String'],
+	pictures 	 : [{
+		idCloudPic : 'String',
+		url 	   : 'String', 
+	}],
 	reservations : [Schema.Types.ObjectId],
 	active		 : 'Boolean' 
 });
